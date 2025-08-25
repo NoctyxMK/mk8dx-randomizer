@@ -1,12 +1,31 @@
-# React + Vite
+# About the Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a randomizer for *Mario Kart 8 Deluxe*.  
+It contains three main pages:
 
-Currently, two official plugins are available:
+1. **Main Page** – lets you choose which randomizer you want to use.  
+2. **Combo Randomizer** – generates a random character, kart, tires, and glider. 
+3. **Item Randomizer** – lets you choose the number of items to generate (up to 22).  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+# How to Use
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Combo Randomizer
+Click the **Randomize** button to generate a random combo (character + kart + tires + glider).
+
+## Item Randomizer
+Select the number of different items you want to generate using the input next to the **Randomize** button.  
+- Minimum: **1**  
+- Maximum: **22**  
+
+You can also reset all selected items by clicking the **Reset** button next to the input field.
+
+---
+
+# Credits
+
+All images are taken from:  
+- https://www.mariowiki.com/Mario_Kart_8_Deluxe  
+- https://mariokart.fandom.com/wiki/Mario_Kart_8_Deluxe 
+
