@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import mk8dx_logo from "../assets/mk8dx_logo.png";
-import qm from "../assets/question_mark.png"
+import qm from "../assets/item_box.png"
 
 const characters = import.meta.glob("../assets/characters/*.png", {as: "url", eager:true});
 const karts = import.meta.glob("../assets/karts/*.png", {as: "url", eager:true});
