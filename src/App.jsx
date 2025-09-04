@@ -5,7 +5,7 @@ import ItemRandomizer from "./pages/ItemRandomizer";
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router basename="/mk8dx-randomizer">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/combos" element={<ComboRandomizer />} />
