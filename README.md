@@ -1,3 +1,7 @@
+# Link
+
+https://noctyxmk.github.io/mk8dx-randomizer/
+
 # About the Project
 
 This is a randomizer for *Mario Kart 8 Deluxe*.  
