@@ -8,7 +8,7 @@ function Home() {
 
 
     useEffect(() => {
-        document.title = "Accueil MK8DX Randomizer";
+        document.title = "MK8DX Randomizer - Home";
     }, []);  
 
     return (
