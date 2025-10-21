@@ -14,7 +14,7 @@ const items_array = [
 const images = import.meta.glob("../assets/items/*.webp", { as: "url", eager:true});
 
 
-const bg_item = Object.values(import.meta.glob("../assets/bg_items.png", {as: "url", eager:true}));
+//const bg_item = Object.values(import.meta.glob("../assets/bg_items.png", {as: "url", eager:true}));
 
 const imageMap = {};
 for (const path in images) {
@@ -30,7 +30,8 @@ function ItemRandomizer() {
 
   return (
     <div className="main">
-  
+      
+      
       <Header />
       <Nav_select />
       <Items_selection />
@@ -40,29 +41,19 @@ function ItemRandomizer() {
 }
 
 
+
 function useBackground(){
 
    useEffect(() => {
         document.title = "MK8DX Item Randomizer";
 
-        document.documentElement.style.backgroundImage = `url(${bg_item})`;
-        document.documentElement.style.backgroundSize = "cover";
-        document.documentElement.style.backgroundPosition = "left";
-        document.documentElement.style.backgroundRepeat = "repeat";
-        document.documentElement.style.backgroundAttachment = "fixed";
-        document.documentElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bg_item})`;
-
-
-        return () => {
-          document.documentElement.style.backgroundImage = "";
-        }
-
-
-
+    
     }, []);  
 
 
 }
+
+
 
 function Header(){
     return(
@@ -97,12 +88,14 @@ function Items_selection(){
   const handleRandomize = () => {
     const indices = selectItem(count);
     setFadedIndices(indices);
+    //document.documentElement.style.backgroundImage = "";
     
   };
 
   const handleReset = () => {
     const indices = selectItem(22);
     setFadedIndices(indices);
+    //document.documentElement.style.backgroundImage = `url(${bg_item})`;
   };
 
 

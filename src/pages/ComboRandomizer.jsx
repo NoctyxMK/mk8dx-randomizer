@@ -12,11 +12,13 @@ const tires = import.meta.glob("../assets/tires/*.png", {as: "url", eager:true})
 const gliders = import.meta.glob("../assets/gliders/*.png", {as: "url", eager:true});
 
 const charactersArray = Object.values(characters);
+console.log(charactersArray);
 const kartsArray = Object.values(karts);
 const tiresArray = Object.values(tires);
 const glidersArray = Object.values(gliders);
 
 const bg_item = Object.values(import.meta.glob("../assets/bg_items.png", {as: "url", eager:true}));
+
 
 
 /*
@@ -65,16 +67,6 @@ function useBackground(){
 
 }
 
-/*
-return un array de taille 4 qui represente le combo aleatoire
-*/
-function randomCombo() {
-  const char_random = Math.floor(Math.random() * charactersArray.length);
-  const kart_random = Math.floor(Math.random() * kartsArray.length);
-  const tire_random = Math.floor(Math.random() * tiresArray.length);
-  const glider_random = Math.floor(Math.random() * glidersArray.length);
-  return [char_random, kart_random, tire_random, glider_random];
-};
 
 /*
 Composants
@@ -109,31 +101,65 @@ function Combo(){
   
   const [combo, setCombo] = useState([null, null, null, null]);
   
-  const handleRandomize = () => {
-    const newCombo = randomCombo();
-    setCombo(newCombo);
-  };
+  const handleRandomize = (index) => {
+
+    setCombo((prevCombo) => {
+      const newCombo = [...prevCombo];
+      let randomIndex;
+
+      switch (index) {
+        case 0:
+          randomIndex = Math.floor(Math.random() * charactersArray.length)
+          newCombo[0] = randomIndex
+          break;
+        
+        case 1:
+          randomIndex = Math.floor(Math.random() * kartsArray.length)
+          newCombo[1] = randomIndex
+          break;
+        
+        case 2:
+          randomIndex = Math.floor(Math.random() * tiresArray.length)
+          newCombo[2] = randomIndex
+          break;
+        
+        case 3:
+          randomIndex = Math.floor(Math.random() * glidersArray.length)
+          newCombo[3] = randomIndex
+          break;
+        
+        default:
+          newCombo[0] = Math.floor(Math.random() * charactersArray.length)
+          newCombo[1] = Math.floor(Math.random() * kartsArray.length)
+          newCombo[2] = Math.floor(Math.random() * tiresArray.length)
+          newCombo[3] = Math.floor(Math.random() * glidersArray.length)
+      }
+      return newCombo
+
+    });
+
+  }
   
   
   return (
     <>
     <div className="combo">
-        <div className="perso">
+        <button className="perso" onClick={() => handleRandomize(0)}>
           <img src={combo[0] !== null ? charactersArray[combo[0]] : qm} alt="character"/>
-        </div>
+        </button>
 
         <div className="vehicules">
-          <div className="vehicules_parts">
+          <button className="vehicules_parts" onClick={() => handleRandomize(1)}>
             <img src={combo[1] !== null ? kartsArray[combo[1]] : qm} alt="kart"/>
-          </div>
+          </button>
 
-          <div className="vehicules_parts">
+          <button className="vehicules_parts" onClick={() => handleRandomize(2)}>
             <img src={combo[2] !== null ? tiresArray[combo[2]] : qm} alt="tire" />
-          </div>
+          </button>
 
-          <div className="vehicules_parts">
+          <button className="vehicules_parts" onClick={() => handleRandomize(3)}>
             <img src={combo[3] !== null ? glidersArray[combo[3]] : qm} alt="glider" />
-          </div>
+          </button>
 
         </div>
 
@@ -141,7 +167,7 @@ function Combo(){
       </div>
 
       <div className="combo_random">
-        <button className="random_button" onClick={handleRandomize}>
+        <button className="random_button" onClick={() => handleRandomize(4)}>
           Randomize
         </button>
       </div>
