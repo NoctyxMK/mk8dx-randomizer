@@ -12,7 +12,6 @@ const tires = import.meta.glob("../assets/tires/*.png", {as: "url", eager:true})
 const gliders = import.meta.glob("../assets/gliders/*.png", {as: "url", eager:true});
 
 const charactersArray = Object.values(characters);
-console.log(charactersArray);
 const kartsArray = Object.values(karts);
 const tiresArray = Object.values(tires);
 const glidersArray = Object.values(gliders);
