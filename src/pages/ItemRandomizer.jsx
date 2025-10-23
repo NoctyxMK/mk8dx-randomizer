@@ -35,6 +35,7 @@ function ItemRandomizer() {
       <Header />
       <Nav_select />
       <Items_selection />
+      
 
     </div>
   );
@@ -83,20 +84,27 @@ function Nav_select(){
 }
 
 
+
 function Items_selection(){
 
   const handleRandomize = () => {
     const indices = selectItem(count);
     setFadedIndices(indices);
-    //document.documentElement.style.backgroundImage = "";
+    
     
   };
 
   const handleReset = () => {
     const indices = selectItem(22);
     setFadedIndices(indices);
-    //document.documentElement.style.backgroundImage = `url(${bg_item})`;
+   
   };
+
+
+  const handleTheme  = (theme) => {
+      const indices = items_theme(theme)
+      setFadedIndices(indices);
+  }
 
 
   const [count, setCount] = useState(1);
@@ -135,11 +143,74 @@ function Items_selection(){
 
       </div>
 
+      <div className="themes_selection">
+
+      <button className="theme_button" onClick={() => handleTheme("Shlag-Master")}>
+        Shlag-Master
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Japan-Lounge")}>
+        Japan-Lounge
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Bomberman")}>
+        Bomberman
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Monkey-Monkey")}>
+        Monkey-Monkey
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Steroids")}>
+        Steroids
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Boo-Kkake")}>
+        Boo-Kkake
+      </button>
+
+      <button className="theme_button" onClick={() => handleTheme("Crazy-Blue")}>
+        Crazy-Blue
+      </button>
+
+    </div>
+
+
       </>
   )
 
 }
 
+
+
+function items_theme(theme) {
+
+  switch (theme){
+    case "Shlag-Master":
+      return [0,2,4,7,8,9,10,11,12,13,14,18,20,21] 
+    
+    case "Japan-Lounge":
+      return [0,1,2,4,8,9,10,11,14,20] 
+
+    case "Bomberman":
+      return [0,1,2,3,4,5,8,9,12,15,16,17,18,19,20,21] 
+
+    case "Monkey-Monkey":
+      return [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21]
+
+    case "Steroids":
+      return [0,1,2,3,4,7,8,10,12,15,16,17,18,20]
+
+    case "Boo-Kkake":
+      return [0,1,2,3,4,5,7,8,9,10,11,13,14,15,16,18,20]
+
+    case "Crazy-Blue":
+      return [0,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,20,21] 
+
+  }
+
+
+}
 
 /*
 input: n

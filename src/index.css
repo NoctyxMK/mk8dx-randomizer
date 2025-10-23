@@ -148,7 +148,7 @@ html, body {
   border-radius: 5px;
   
   clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
-  background: linear-gradient(90deg, #da65fa, #e799fc);
+  background: linear-gradient(90deg, #1b5aab, #54e0f6);
   color: white;
   overflow: hidden;
   z-index: 0;
@@ -166,7 +166,7 @@ html, body {
   left: 0;
   height: 100%;
   width: 0%; 
-  background: linear-gradient(90deg, #4392d7, #83dbfd); 
+  background: linear-gradient(90deg, #6a0d32, #fc6eb2); 
   transition: width 0.4s ease-in-out;
   z-index: 1;
   border-radius: 5px;
@@ -365,6 +365,41 @@ html, body {
   cursor: pointer;
   opacity: 90%;
 }
+
+/** Themes part*/
+
+.themes_selection {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 2%;
+
+}
+
+
+.theme_button {
+  background: linear-gradient(0deg, #6a0d32, #fc6eb2); 
+  width: 170px;
+  height: 45px;
+  font-size: 18px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+
+}
+
+
+.theme_button:hover {
+  cursor: pointer;
+  opacity: 70%;
+
+
+}
+
 
 /*
 #83dbfd
