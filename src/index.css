@@ -400,6 +400,51 @@ html, body {
 
 }
 
+.theme_button a {
+  color: #fbfbfe;
+}
+
+
+/*Track Page*/
+
+.tracks_selection{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+.button_random_track {
+
+
+  
+  margin-top: 4%;
+  width: 170px;
+  height: 45px;
+  font-size: 18px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background-image: linear-gradient(180deg, #83dbfd, #4392d7);
+
+
+}
+
+
+.button_random_track:hover{
+
+  cursor: pointer;
+  opacity: 75%;
+
+
+}
+
 
 /*
 #83dbfd
