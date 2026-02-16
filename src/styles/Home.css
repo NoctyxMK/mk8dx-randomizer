@@ -1,0 +1,48 @@
+/*Home page*/
+
+
+.main{
+  
+  margin: auto;
+  
+  width: 80%;
+  
+  position: relative;
+  z-index: 1;
+
+
+  flex: 1 0 auto;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  
+
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.main h1 {
+  font-size: 56px;
+  margin: 0;
+  margin-bottom: 2%;
+}
+
+.main img {
+  height: 110px;
+}
+
+
+
+.bar {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  height: 2px;
+  background-color: white;
+  width: 100%;
+}

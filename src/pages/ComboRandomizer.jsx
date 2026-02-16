@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-
 import { useEffect, useState } from "react";
-import mk8dx_logo from "../assets/mk8dx_logo.png";
 import qm from "../assets/item_box.png"
-
-
+import '../styles/Combo.css'
+import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
 
 const characters = import.meta.glob("../assets/characters/*.png", {as: "url", eager:true});
 const karts = import.meta.glob("../assets/karts/*.png", {as: "url", eager:true});
@@ -30,16 +29,15 @@ function ComboRandomizer() {
   useBackground();
 
   return (
-
+    <>
+    <Header />
     <div className="main">
-      
-      <Header />
       <Nav_select />
       <Combo />
-
-    
+      
     </div>
-
+    <Footer />
+    </>
   );
 }
 
@@ -54,8 +52,7 @@ function useBackground(){
           document.documentElement.style.backgroundRepeat = "repeat";
           document.documentElement.style.backgroundAttachment = "fixed";
           document.documentElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bg_item})`;
-  
-  
+          
           return () => {
             document.documentElement.style.backgroundImage = "";
           }
@@ -70,19 +67,7 @@ function useBackground(){
 /*
 Composants
 */
-function Header(){
-  return (
-    <>
-    <div className="header">
-        <h1>Combo Randomizer</h1>
-        <img src={mk8dx_logo} alt="mk8dx logo"/>
-        
 
-    </div>
-    <div className="bar"></div>
-    </>
-  )
-}
 
 function Nav_select(){
 
@@ -90,7 +75,7 @@ function Nav_select(){
       <div className="nav_page_select">
         <Link to="../"><button><span>➜ Home Page</span></button></Link>
         <Link to="/items"><button><span>➜ Item Randomizer</span></button></Link>
-
+        <Link to="/tracks"><button><span>➜ Track Randomizer</span></button></Link>
       </div>
   )
 

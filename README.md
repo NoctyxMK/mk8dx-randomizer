@@ -33,3 +33,7 @@ All images are taken from:
 - https://www.mariowiki.com/Mario_Kart_8_Deluxe  
 - https://mariokart.fandom.com/wiki/Mario_Kart_8_Deluxe 
 
+
+## Disclaimer
+
+Fan-made project. Not affiliated with Nintendo.

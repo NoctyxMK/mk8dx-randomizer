@@ -1,0 +1,134 @@
+/*Item page*/
+
+.item {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2%;
+  
+ 
+}
+
+.item_square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-image: linear-gradient(180deg, #83dbfd, #4392d7);
+  border: 1px solid #83dbfd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin: 1%;
+  
+  
+}
+
+.item_square:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+/*180deg, #83dbfd, #4392d7*/
+
+
+.item_square img {
+  height: 60%;
+  width: 60%;
+  object-fit: contain;
+  
+  
+}
+
+/*
+.item_square:hover {
+  opacity: 10%;
+}*/
+
+.item_random {
+  display: flex;
+  width: 100%;
+  margin-top: 4%;
+  padding-bottom: 4%;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_random .random_button {
+  margin-right: 2%;
+}
+
+
+.counter_label {
+  background-color: azure;
+  
+  height: 39px;
+  font-size: 18px;
+  color: black;
+  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border-color: #4da6ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  
+}
+
+.reset_button {
+  
+  background-color: #da65fa;
+  width: 170px;
+  height: 45px;
+  font-size: 18px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-left: 4%;
+  color: #fbfbfe;
+
+}
+
+.reset_button:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+/** Themes part*/
+
+.themes_selection {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 2%;
+
+}
+
+
+.theme_button {
+  background: linear-gradient(0deg, #6a0d32, #fc6eb2); 
+  width: 170px;
+  height: 45px;
+  font-size: 18px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: #fbfbfe;
+
+
+}
+
+
+.theme_button:hover {
+  cursor: pointer;
+  opacity: 70%;
+
+
+}

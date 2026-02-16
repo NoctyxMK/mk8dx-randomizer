@@ -1,0 +1,142 @@
+/*Track Page*/
+
+:root {
+
+  --first-color: #4392d7;
+  --second-color: #a863ba;
+  --third-color: darkslategray;
+}
+
+.tracks_selection{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+
+}
+
+
+.button_random_track {
+
+
+  
+  
+  width: 170px;
+  height: 45px;
+  font-size: 18px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background-image: linear-gradient(180deg, #83dbfd, #4392d7);
+  margin-right: 2%;
+
+
+}
+
+
+.button_random_track:hover{
+
+  cursor: pointer;
+  opacity: 75%;
+ 
+
+}
+
+
+.button_choose_num_track{
+
+  background-color: azure;
+  
+  height: 39px;
+  font-size: 18px;
+  color: black;
+  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border-color: #4da6ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+
+}
+
+.display_tracks {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 4px solid var(--first-color);
+  border-radius: 10px;
+  width: 100%;
+  padding: 36px;
+  min-height: 200px;
+  box-sizing: border-box;
+  height: auto;
+}
+
+
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 0 1 calc(25% - 24px);
+  min-width: 120px;
+  max-width: 220px;
+  aspect-ratio: 16 / 9;
+  border: 4px solid var(--second-color);
+  border-radius: 0 8px 0 8px;
+  background-color: lightsteelblue;
+  animation: popIn 0.35s ease-out forwards;
+  
+}
+
+
+.map img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 0 5px 0 5px;
+  object-fit: cover;
+}
+
+
+
+
+@keyframes popIn {
+  0% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .map { flex: 0 1 calc(33.333% - 24px); }
+}
+
+@media (max-width: 600px) {
+  .map { flex: 0 1 calc(50% - 20px); }
+}
+
+@media (max-width: 360px) {
+  .map { flex: 0 1 calc(100% - 16px); }
+}

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import mk8dx_logo from "../assets/mk8dx_logo.png";
-
+import '../styles/Item.css'
+import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
 
 const items_array = [
   "Banana", "TripleBanana", "GreenShell", "TripleGreenShells", "RedShell", "TripleRedShells", 
@@ -23,21 +24,21 @@ for (const path in images) {
 }
 
 
-
 function ItemRandomizer() {
   
   useBackground();
 
   return (
+    <>
+    <Header />
+    
     <div className="main">
-      
-      
-      <Header />
       <Nav_select />
       <Items_selection />
       
-
     </div>
+    <Footer />
+    </>
   );
 }
 
@@ -55,48 +56,29 @@ function useBackground(){
 }
 
 
-
-function Header(){
-    return(
-      <>
-        <div className="header">
-          <h1>Item Randomizer</h1>
-          <img src={mk8dx_logo} alt="mk8dx logo"/>
-
-
-        </div>
-
-        <div className="bar"></div>
-      </>
-    )
-}
-
-
 function Nav_select(){
   return (
       <div className="nav_page_select">
         <Link to="../"><button><span>➜ Home Page</span></button></Link>
         <Link to="/combos"><button><span>➜ Combo Randomizer</span></button></Link>
-
+        <Link to="/tracks"><button><span>➜ Track Randomizer</span></button></Link>
       </div>
   )
 
 }
 
-
-
 function Items_selection(){
 
   const handleRandomize = () => {
-    const indices = selectItem(count);
+    const indices = selectItem(count, bannedIndices);
     setFadedIndices(indices);
     
     
   };
 
   const handleReset = () => {
-    const indices = selectItem(22);
-    setFadedIndices(indices);
+    setFadedIndices([]);
+    setBannedIndices([])
    
   };
 
@@ -106,22 +88,43 @@ function Items_selection(){
       setFadedIndices(indices);
   }
 
+  const handleBan = (indice) => {
+    setBannedIndices(prev => {
+      const newBans = [...prev]
+
+      if(newBans.includes(indice)){
+        newBans.splice(newBans.indexOf(indice), 1)
+      } else {
+        newBans.push(indice)
+      }
+
+      
+      
+      return newBans
+
+    })
+  }
+
 
   const [count, setCount] = useState(1);
   const [fadedIndices, setFadedIndices] = useState([]);
+
+  const [bannedIndices, setBannedIndices] = useState([]);
+
 
   return (
     <>
     
     <div className="item">
         {items_array.map((itemName, index) => (
-          <div className="item_square" key={itemName} style={{
-            opacity: fadedIndices.includes(index) ? 0.1 : 1
+          <div className="item_square" onClick={() => handleBan(index)} key={itemName} style={{
+            opacity: fadedIndices.includes(index) ? 0.1 : 1,
+            filter: bannedIndices.includes(index)? "grayscale(100%)": "grayscale(0%)"
           }}>
             <img src={imageMap[itemName]} alt={itemName}/>
           </div>
         ))}
-      </div>
+    </div>
 
       <div className="item_random">
 
@@ -217,14 +220,19 @@ input: n
 output: Array de int
 genere k nombres correspondant aux indices des objets du tableau items_array
 */
-function selectItem(n) {
+function selectItem(n, bannedIndices) {
+
+
   const k = items_array.length - n
 
-  const indices = new Set();
+  const indices = new Set(bannedIndices);
+
 
   while (indices.size < k){
     const rand = Math.floor(Math.random() * items_array.length);
-    indices.add(rand);
+    
+    indices.add(rand)
+    
   }
 
   return Array.from(indices);
